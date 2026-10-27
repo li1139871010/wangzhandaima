@@ -3,47 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人主页</title>
+    <title>章鱼哥的个人主页</title>
+    <!-- 这里是浏览器标签页的小图标，用了一个狼的 Emoji -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐺</text></svg>">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav>
         <div class="nav-links">
-            <a href="#">首页</a>
-            <a href="#">关于我</a>
-            <a href="#">作品展示</a>
+            <!-- 这里加了 #home, #about 等锚点，让点击后能跳转 -->
+            <a href="#home">首页</a>
+            <a href="#about">关于我</a>
+            <a href="#portfolio">作品展示</a>
+            <a href="#contact">联系我</a>
         </div>
-        <!-- 暗黑模式切换按钮 -->
         <button class="theme-toggle" id="themeToggle">🌙 切换深色</button>
     </nav>
 
-    <header>
-        <!-- 这里用的是一个网络测试图片，如果你要用本地头像，把 src 改成 images/avatar.jpg -->
-        <img src="https://picsum.photos/200" alt="头像" class="avatar">
+    <!-- 首页区块 -->
+    <section id="home" class="section-header">
+        <img src="images/avatar.jpg" alt="章鱼哥的头像" class="avatar" onerror="this.src='https://picsum.photos/200'">
         <h1>你好，我是章鱼哥</h1>
-        <p>欢迎来到我的个人主页</p>
-    </header>
+        <p>热爱代码与设计的独立开发者</p>
+    </section>
 
-    <div class="container">
-        <div class="card">
-            <h2>作品一</h2>
-            <p>这是我亲手写出的第一个网页项目。</p>
-            <a href="#" class="btn">查看详情</a>
+    <!-- 关于我区块 -->
+    <section id="about" class="content-section">
+        <h2 class="section-title">关于我</h2>
+        <div class="card" style="max-width: 800px; margin: 0 auto; text-align: left;">
+            <p>你好！这里是章鱼哥的秘密基地。我是一个对科技充满好奇心的人，最近刚刚学会了如何用 AI 和本地大模型来搭建网站。</p>
+            <br>
+            <p>这个网站就是我亲手从零开始敲出来的，目前已经支持了暗黑模式、平滑滚动，并且托管在 Vercel 上。未来我还会在这里展示更多好玩的东西！</p>
         </div>
+    </section>
 
-        <div class="card">
-            <h2>作品二</h2>
-            <p>基于 HTML, CSS 和 JavaScript 制作。</p>
-            <a href="#" class="btn">查看详情</a>
+    <!-- 作品展示区块 -->
+    <section id="portfolio" class="content-section">
+        <h2 class="section-title">作品展示</h2>
+        <div class="container">
+            <div class="card">
+                <h2>我的第一个网页</h2>
+                <p>你正在浏览的这个网站，使用了 HTML, CSS 和 JS。</p>
+                <a href="#" class="btn">查看详情</a>
+            </div>
+    
+            <div class="card">
+                <h2>本地 AI 智能体</h2>
+                <p>基于 Ollama 和 Qwen2.5 部署的本地代码助手。</p>
+                <a href="#" class="btn">查看详情</a>
+            </div>
+    
+            <div class="card">
+                <h2>待开发项目</h2>
+                <p>下一个改变世界的想法正在酝酿中...</p>
+                <a href="#" class="btn">查看详情</a>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <h2>作品三</h2>
-            <p>完全免费，并且成功部署到了云端。</p>
-            <a href="#" class="btn">查看详情</a>
+    <!-- 联系我区块 -->
+    <section id="contact" class="content-section">
+        <h2 class="section-title">联系我</h2>
+        <div class="card" style="max-width: 600px; margin: 0 auto;">
+            <p>如果你对我的项目感兴趣，或者想和我交流技术，欢迎随时给我发邮件！</p>
+            <br>
+            <a href="mailto:hello@example.com" class="btn">发送邮件</a>
         </div>
-    </div>
+    </section>
+
+    <footer>
+        <p>© 2026 章鱼哥的个人主页. All Rights Reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

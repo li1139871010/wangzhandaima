@@ -165,3 +165,37 @@ header p {
 .btn:hover {
     background: #0077ed;
 }
+/* ================= 新增的区块样式 ================= */
+
+/* 开启全局平滑滚动（点击导航栏丝滑滑下去） */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 顶部首页留白，防止被导航栏挡住 */
+.section-header {
+    padding-top: 120px; 
+    padding-bottom: 60px;
+}
+
+/* 各个内容区块的间距 */
+.content-section {
+    padding: 60px 20px;
+}
+
+/* 区块大标题 */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+    margin-top: 40px;
+}
