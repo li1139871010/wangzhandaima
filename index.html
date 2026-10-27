@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>章鱼哥的个人主页</title>
-    <!-- 这里是浏览器标签页的小图标，用了一个狼的 Emoji -->
+    <title>章鱼哥 | 独立开发者与 AI 玩家</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐺</text></svg>">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,68 +11,95 @@
 
     <nav>
         <div class="nav-links">
-            <!-- 这里加了 #home, #about 等锚点，让点击后能跳转 -->
             <a href="#home">首页</a>
-            <a href="#about">关于我</a>
-            <a href="#portfolio">作品展示</a>
-            <a href="#contact">联系我</a>
+            <a href="#skills">我的能力</a>
+            <a href="#services">服务项目</a>
+            <a href="#contact">联系合作</a>
         </div>
         <button class="theme-toggle" id="themeToggle">🌙 切换深色</button>
     </nav>
 
-    <!-- 首页区块 -->
-    <section id="home" class="section-header">
-        <img src="images/avatar.jpg" alt="章鱼哥的头像" class="avatar" onerror="this.src='https://picsum.photos/200'">
-        <h1>你好，我是章鱼哥</h1>
-        <p>热爱代码与设计的独立开发者</p>
-    </section>
-
-    <!-- 关于我区块 -->
-    <section id="about" class="content-section">
-        <h2 class="section-title">关于我</h2>
-        <div class="card" style="max-width: 800px; margin: 0 auto; text-align: left;">
-            <p>你好！这里是章鱼哥的秘密基地。我是一个对科技充满好奇心的人，最近刚刚学会了如何用 AI 和本地大模型来搭建网站。</p>
-            <br>
-            <p>这个网站就是我亲手从零开始敲出来的，目前已经支持了暗黑模式、平滑滚动，并且托管在 Vercel 上。未来我还会在这里展示更多好玩的东西！</p>
+    <!-- 首屏海报区 (Hero Section) -->
+    <section id="home" class="hero fade-in">
+        <!-- 如果你有本地的狼头像，把 src 换成 images/avatar.jpg -->
+        <img src="https://picsum.photos/200" alt="章鱼哥的头像" class="avatar">
+        <h1 class="hero-title">你好，我是 <span class="highlight">章鱼哥</span></h1>
+        <!-- 修改下面这句话，写下你的核心定位 -->
+        <p class="hero-subtitle">一个热衷于折腾 AI 和本地大模型的独立开发者。</p>
+        <div class="hero-buttons">
+            <a href="#services" class="btn btn-primary">查看我的服务</a>
+            <a href="#contact" class="btn btn-secondary">联系我</a>
         </div>
     </section>
 
-    <!-- 作品展示区块 -->
-    <section id="portfolio" class="content-section">
-        <h2 class="section-title">作品展示</h2>
+    <!-- 核心卖点区 (Features/Skills) -->
+    <section id="skills" class="content-section fade-in">
+        <h2 class="section-title">我的核心能力</h2>
         <div class="container">
-            <div class="card">
-                <h2>我的第一个网页</h2>
-                <p>你正在浏览的这个网站，使用了 HTML, CSS 和 JS。</p>
-                <a href="#" class="btn">查看详情</a>
+            <!-- 卡片 1 -->
+            <div class="card skill-card">
+                <div class="icon">💻</div>
+                <h2>前端开发</h2>
+                <p>熟练使用 HTML, CSS, JS。能够独立从零搭建响应式网页，并部署上线。</p>
             </div>
-    
-            <div class="card">
-                <h2>本地 AI 智能体</h2>
-                <p>基于 Ollama 和 Qwen2.5 部署的本地代码助手。</p>
-                <a href="#" class="btn">查看详情</a>
+            <!-- 卡片 2 -->
+            <div class="card skill-card">
+                <div class="icon">🤖</div>
+                <h2>AI 智能体部署</h2>
+                <p>熟悉 Ollama 与本地大模型运行机制。能利用 DSH 框架搭建自动化工作流。</p>
             </div>
-    
-            <div class="card">
-                <h2>待开发项目</h2>
-                <p>下一个改变世界的想法正在酝酿中...</p>
-                <a href="#" class="btn">查看详情</a>
+            <!-- 卡片 3 -->
+            <div class="card skill-card">
+                <div class="icon">🚀</div>
+                <h2>产品思维</h2>
+                <p>不只是写代码，更懂得如何利用技术解决具体问题，打造极致的用户体验。</p>
             </div>
         </div>
     </section>
 
-    <!-- 联系我区块 -->
-    <section id="contact" class="content-section">
-        <h2 class="section-title">联系我</h2>
-        <div class="card" style="max-width: 600px; margin: 0 auto;">
-            <p>如果你对我的项目感兴趣，或者想和我交流技术，欢迎随时给我发邮件！</p>
-            <br>
-            <a href="mailto:hello@example.com" class="btn">发送邮件</a>
+    <!-- 服务项目区 (Services - 像商品一样列出服务) -->
+    <section id="services" class="content-section fade-in">
+        <h2 class="section-title">我可以为你做什么</h2>
+        <div class="container">
+            <div class="card price-card">
+                <h2>基础网页搭建</h2>
+                <div class="price">￥ 面议</div>
+                <ul class="feature-list">
+                    <li>✅ 个人主页/简历页</li>
+                    <li>✅ 产品展示单页</li>
+                    <li>✅ 移动端完美适配</li>
+                    <li>✅ 免费部署上线</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary" style="width: 100%;">立即咨询</a>
+            </div>
+            
+            <div class="card price-card featured">
+                <div class="badge">最受欢迎</div>
+                <h2>AI 工具链咨询</h2>
+                <div class="price">￥ 面议</div>
+                <ul class="feature-list">
+                    <li>✅ 本地大模型部署指导</li>
+                    <li>✅ 专属代码助手调教</li>
+                    <li>✅ 自动化工作流设计</li>
+                    <li>✅ 一对一答疑</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary" style="width: 100%;">立即咨询</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系区 (Contact) -->
+    <section id="contact" class="content-section fade-in">
+        <div class="card contact-card">
+            <h2>准备好开始合作了吗？</h2>
+            <p>无论你是想建一个网站，还是对 AI 充满好奇，都欢迎随时联系我。</p>
+            <!-- 修改下面的 mailto: 后面的邮箱地址 -->
+            <a href="mailto:your-email@example.com" class="btn btn-primary" style="margin-top: 20px;">发送邮件给我</a>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 章鱼哥的个人主页. All Rights Reserved.</p>
+        <p>© 2026 章鱼哥. Built with ❤️ and AI.</p>
     </footer>
 
     <script src="script.js"></script>
