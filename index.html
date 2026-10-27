@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>    
-    <header>
-        <img src="images/avatar.jpg" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-        <h1>你好，我是章鱼哥</h1>
-        <p>欢迎来到我的个人主页</p>
-    </header>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的个人主页</title>
@@ -14,16 +9,26 @@
 <body>
 
     <nav>
-        <a href="#">首页</a>
-        <a href="#">关于我</a>
-        <a href="#">作品展示</a>
+        <div class="nav-links">
+            <a href="#">首页</a>
+            <a href="#">关于我</a>
+            <a href="#">作品展示</a>
+        </div>
+        <!-- 暗黑模式切换按钮 -->
+        <button class="theme-toggle" id="themeToggle">🌙 切换深色</button>
     </nav>
+
+    <header>
+        <!-- 这里用的是一个网络测试图片，如果你要用本地头像，把 src 改成 images/avatar.jpg -->
+        <img src="https://picsum.photos/200" alt="头像" class="avatar">
+        <h1>你好，我是章鱼哥</h1>
+        <p>欢迎来到我的个人主页</p>
     </header>
 
     <div class="container">
         <div class="card">
             <h2>作品一</h2>
-            <p>这是我用本地智能体写出的第一个网页项目。</p>
+            <p>这是我亲手写出的第一个网页项目。</p>
             <a href="#" class="btn">查看详情</a>
         </div>
 
@@ -35,7 +40,7 @@
 
         <div class="card">
             <h2>作品三</h2>
-            <p>完全免费，在本地运行的智能体。</p>
+            <p>完全免费，并且成功部署到了云端。</p>
             <a href="#" class="btn">查看详情</a>
         </div>
     </div>

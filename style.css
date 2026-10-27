@@ -1,3 +1,4 @@
+/* 基础重置 */
 * {
     margin: 0;
     padding: 0;
@@ -5,54 +6,119 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-body {
-    background-color: #f5f7fa;
-    color: #333;
-    line-height: 1.6;
-    padding-top: 80px;
+/* 定义亮色模式的颜色变量 */
+:root {
+    --bg-color: #f5f7fa;
+    --text-color: #333;
+    --text-muted: #86868b;
+    --card-bg: #ffffff;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --border-color: rgba(0,0,0,0.05);
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
+/* 定义暗色模式的颜色变量（当 body 加上 dark-mode 时生效） */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --card-bg: #1e1e1e;
+    --nav-bg: rgba(30, 30, 30, 0.8);
+    --border-color: rgba(255,255,255,0.1);
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* 全局应用变量，并加入平滑过渡动画 */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-top: 80px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* 毛玻璃导航栏 */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
     height: 70px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 40px;
-    background: rgba(255, 255, 255, 0.8);
+    padding: 0 5%;
+    background: var(--nav-bg);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
     z-index: 1000;
+    transition: background 0.4s ease;
 }
 
-nav a {
+.nav-links a {
     text-decoration: none;
-    color: #555;
+    color: var(--text-muted);
     font-weight: 500;
+    margin-right: 30px;
+    transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: #000;
+.nav-links a:hover {
+    color: var(--text-color);
 }
 
+/* 切换按钮样式 */
+.theme-toggle {
+    background: transparent;
+    border: 1px solid var(--text-muted);
+    color: var(--text-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* 头部区域 */
 header {
     text-align: center;
     padding: 60px 20px;
 }
 
+/* 头像样式 */
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+}
+
 header h1 {
     font-size: 3rem;
     margin-bottom: 10px;
-    color: #1d1d1f;
+    color: var(--text-color);
 }
 
 header p {
     font-size: 1.2rem;
-    color: #86868b;
+    color: var(--text-muted);
 }
 
+/* 卡片布局 */
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -63,25 +129,26 @@ header p {
 }
 
 .card {
-    background: #ffffff;
+    background: var(--card-bg);
     padding: 40px 30px;
     border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease;
     text-align: center;
 }
 
 .card:hover {
     transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
 }
 
 .card h2 {
     margin-bottom: 15px;
-    color: #1d1d1f;
+    color: var(--text-color);
 }
 
 .card p {
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 25px;
 }
 
@@ -93,4 +160,8 @@ header p {
     color: white;
     text-decoration: none;
     transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #0077ed;
 }

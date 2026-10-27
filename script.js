@@ -1,14 +1,25 @@
-// 等网页加载完毕后执行
 document.addEventListener("DOMContentLoaded", function() {
-    // 找到所有的按钮
+    // 1. 处理暗黑模式切换
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', function() {
+        // 切换 body 上的 dark-mode 类
+        body.classList.toggle('dark-mode');
+        
+        // 根据当前模式改变按钮文字
+        if (body.classList.contains('dark-mode')) {
+            themeToggle.textContent = '☀️ 切换浅色';
+        } else {
+            themeToggle.textContent = '🌙 切换深色';
+        }
+    });
+
+    // 2. 处理查看详情按钮的点击弹窗
     const buttons = document.querySelectorAll('.btn');
-    
-    // 给每个按钮加上点击事件
     buttons.forEach(function(button) {
         button.addEventListener('click', function(event) {
-            // 阻止按钮默认的跳转行为
             event.preventDefault(); 
-            // 弹出提示框
             alert("章鱼哥，这个作品还在努力制作中，敬请期待！");
         });
     });
