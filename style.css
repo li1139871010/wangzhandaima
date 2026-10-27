@@ -176,6 +176,7 @@ html {
 .section-header {
     padding-top: 120px; 
     padding-bottom: 60px;
+    text-align: center; /* 就是这一行，让里面的文字和图片居中 */
 }
 
 /* 各个内容区块的间距 */
