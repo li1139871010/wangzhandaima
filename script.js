@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (copyWechatBtn) {
         copyWechatBtn.addEventListener('click', function() {
             // 这里要改成你真实的微信号
-            const wechatId = 'zhange_888'; 
+            const wechatId = 'Never_forever-_-'; 
             
             // 调用浏览器剪贴板 API
             navigator.clipboard.writeText(wechatId).then(() => {

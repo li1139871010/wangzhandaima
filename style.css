@@ -1,33 +1,38 @@
-/* ====== 基础变量 ====== */
+/* ====== 基础变量：原木奶油风 ====== */
 :root {
-    --bg-color: #f5f7fa;
-    --text-color: #1d1d1f;
-    --text-muted: #86868b;
+    --bg-color: #fbfaf8; /* 温暖米白 */
+    --text-color: #3a3a3a; /* 深灰字，比纯黑柔和 */
+    --text-muted: #8a8a8a;
     --card-bg: #ffffff;
-    --nav-bg: rgba(255, 255, 255, 0.8);
-    --border-color: rgba(0,0,0,0.08);
-    --shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-    --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
-    --primary-color: #0071e3;
-    --primary-hover: #0077ed;
+    --nav-bg: rgba(251, 250, 248, 0.85);
+    --border-color: #e8e4db; /* 浅木色边框 */
+    --shadow: 0 10px 40px rgba(180, 170, 150, 0.08);
+    --shadow-hover: 0 20px 50px rgba(180, 170, 150, 0.15);
+    --primary-color: #5c4d43; /* 深原木色/咖啡色代替科技蓝 */
+    --primary-hover: #473b33;
+    --accent-color: #c9b4a1; /* 浅木色点缀 */
+    --bg-alt: #f4f1ec; /* 品牌故事背景色 */
 }
 
 body.dark-mode {
-    --bg-color: #0f0f0f;
-    --text-color: #f5f5f7;
-    --text-muted: #a1a1a6;
-    --card-bg: #1c1c1e;
-    --nav-bg: rgba(15, 15, 15, 0.8);
-    --border-color: rgba(255,255,255,0.1);
-    --shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.5);
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --text-muted: #999999;
+    --card-bg: #242424;
+    --nav-bg: rgba(26, 26, 26, 0.85);
+    --border-color: #333333;
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.6);
+    --primary-color: #d1c7bd;
+    --primary-hover: #e5ded6;
+    --bg-alt: #111111;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: "Georgia", "Songti SC", "Noto Serif SC", -apple-system, sans-serif; /* 加入了优雅的衬线体 */
 }
 
 html { scroll-behavior: smooth; }
@@ -35,7 +40,7 @@ html { scroll-behavior: smooth; }
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.8;
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
@@ -44,80 +49,73 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 70px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
     background: var(--nav-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
 }
 
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+}
+
 .nav-links a {
     text-decoration: none;
-    color: var(--text-muted);
+    color: var(--text-color);
     font-weight: 500;
     margin-right: 30px;
     transition: color 0.3s;
+    font-family: -apple-system, sans-serif; /* 导航栏用无衬线体更清爽 */
 }
 
-.nav-links a:hover { color: var(--text-color); }
+.nav-links a:hover { color: var(--accent-color); }
 
 .theme-toggle {
     background: transparent;
     border: 1px solid var(--border-color);
     color: var(--text-color);
-    padding: 8px 16px;
-    border-radius: 20px;
+    padding: 6px 12px;
+    border-radius: 4px; /* 家具风不需要太圆的按钮 */
     cursor: pointer;
-    font-weight: 500;
     transition: all 0.3s;
+    font-family: -apple-system, sans-serif;
 }
-
-.theme-toggle:hover { background: var(--text-color); color: var(--bg-color); }
 
 /* ====== 首屏海报区 ====== */
 .hero {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 0 20px;
-    background: radial-gradient(circle at 50% 10%, rgba(0, 113, 227, 0.08) 0%, transparent 50%);
-}
-
-.avatar {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    box-shadow: var(--shadow);
-    border: 4px solid var(--card-bg);
+    background-color: var(--bg-alt);
 }
 
 .hero-title {
     font-size: 3.5rem;
-    letter-spacing: -1.5px;
-    margin-bottom: 10px;
-}
-
-.highlight {
-    background: linear-gradient(90deg, #0071e3, #00d2ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: var(--text-color);
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: var(--text-muted);
     margin-bottom: 40px;
     max-width: 600px;
+    font-family: -apple-system, sans-serif;
 }
 
 .hero-buttons { display: flex; gap: 20px; }
@@ -125,87 +123,46 @@ nav {
 /* ====== 按钮系统 ====== */
 .btn {
     display: inline-block;
-    padding: 14px 30px;
-    border-radius: 30px;
+    padding: 12px 32px;
+    border-radius: 2px; /* 方形按钮更显高级 */
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     transition: all 0.3s ease;
     cursor: pointer;
-    border: none;
+    border: 1px solid transparent;
+    font-family: -apple-system, sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
 }
 
-.btn-primary { background: var(--primary-color); color: #fff; box-shadow: 0 4px 15px rgba(0, 113, 227, 0.3); }
-.btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
-.btn-secondary { background: transparent; color: var(--text-color); border: 1px solid var(--border-color); }
-.btn-secondary:hover { background: var(--border-color); }
+.btn-primary { background: var(--primary-color); color: var(--bg-color); }
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-secondary { background: transparent; color: var(--text-color); border: 1px solid var(--text-color); }
+.btn-secondary:hover { background: var(--text-color); color: var(--bg-color); }
 
 /* ====== 内容区块与卡片 ====== */
 .content-section { padding: 100px 20px; }
-.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; letter-spacing: -1px; }
+.section-title { text-align: center; font-size: 2.2rem; font-weight: normal; margin-bottom: 60px; letter-spacing: 1px; }
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1100px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .card {
     background: var(--card-bg);
-    padding: 40px;
-    border-radius: 24px;
+    border-radius: 4px;
     box-shadow: var(--shadow);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     border: 1px solid var(--border-color);
 }
 
-.card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); }
-
-/* 技能卡片 */
-.skill-card { text-align: center; }
-.skill-card .icon { font-size: 3rem; margin-bottom: 20px; }
-.skill-card h2 { margin-bottom: 15px; font-size: 1.5rem; }
-.skill-card p { color: var(--text-muted); }
-
-/* 服务/价格卡片 */
-.price-card { position: relative; text-align: center; display: flex; flex-direction: column; }
-.price-card.featured { border: 2px solid var(--primary-color); }
-.badge {
-    position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
-    background: var(--primary-color); color: #fff; padding: 5px 15px;
-    border-radius: 20px; font-size: 0.8rem; font-weight: bold;
-}
-.price { font-size: 2rem; font-weight: 700; margin: 20px 0; color: var(--primary-color); }
-.feature-list { list-style: none; text-align: left; margin-bottom: 30px; flex-grow: 1; }
-.feature-list li { margin-bottom: 12px; color: var(--text-muted); }
-
-/* 联系卡片 */
-.contact-card { max-width: 700px; margin: 0 auto; text-align: center; }
-.contact-card h2 { font-size: 2rem; margin-bottom: 15px; }
-.contact-card p { color: var(--text-muted); font-size: 1.1rem; }
-
-/* ====== 页脚 ====== */
-footer { text-align: center; padding: 40px; color: var(--text-muted); border-top: 1px solid var(--border-color); }
-
-/* ====== 滚动渐显动画 ====== */
-.fade-in {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-
-/* 手机端适配 */
-@media (max-width: 768px) {
-    .hero-title { font-size: 2.5rem; }
-    .hero-buttons { flex-direction: column; width: 100%; max-width: 300px; }
-    .nav-links { display: none; } /* 手机上暂时隐藏导航文字，只留切换按钮 */
-}
-/* ================= 商品展示区专属样式 ================= */
-
+/* ====== 家具商品卡片 ====== */
 .product-card {
-    padding: 0; /* 去掉卡片内边距，让图片顶格 */
+    padding: 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -213,54 +170,76 @@ footer { text-align: center; padding: 40px; color: var(--text-muted); border-top
 
 .product-img {
     width: 100%;
-    height: 220px;
+    height: 300px;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
 }
 
-/* 鼠标悬停时图片微微放大 */
 .product-card:hover .product-img {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .product-info {
-    padding: 25px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    text-align: center;
 }
 
 .product-info h2 {
     font-size: 1.4rem;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-weight: normal;
 }
 
 .product-desc {
     color: var(--text-muted);
     font-size: 0.95rem;
-    margin-bottom: 20px;
-    flex-grow: 1; /* 让价格和按钮始终在底部对齐 */
+    margin-bottom: 25px;
+    flex-grow: 1;
+    font-family: -apple-system, sans-serif;
 }
 
 .product-bottom {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    gap: 15px;
     margin-top: auto;
 }
 
 .price {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ff3b30; /* 电商常用的促销红 */
-    margin: 0;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    font-weight: bold;
 }
 
-body.dark-mode .price {
-    color: #ff453a;
-}
+/* ====== 品牌故事 ====== */
+.bg-alt { background-color: var(--bg-alt); }
+.about-content { max-width: 800px; margin: 0 auto; text-align: center; }
+.about-content p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 20px; font-family: -apple-system, sans-serif; }
 
-.btn-small {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+/* ====== 联系卡片 ====== */
+.contact-card { max-width: 700px; margin: 0 auto; text-align: center; padding: 60px 40px; }
+.contact-card h2 { font-size: 2rem; margin-bottom: 20px; font-weight: normal; }
+.contact-card p { color: var(--text-muted); font-size: 1.05rem; font-family: -apple-system, sans-serif; }
+
+/* ====== 页脚 ====== */
+footer { text-align: center; padding: 50px; color: var(--text-muted); border-top: 1px solid var(--border-color); font-family: -apple-system, sans-serif; font-size: 0.9rem;}
+
+/* ====== 滚动渐显动画 ====== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* 手机端适配 */
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.2rem; }
+    .nav-links { display: none; }
+    .hero-buttons { flex-direction: column; width: 100%; max-width: 300px; }
+    .product-img { height: 240px; }
 }
