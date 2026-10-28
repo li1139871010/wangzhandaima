@@ -40,3 +40,24 @@ document.addEventListener("DOMContentLoaded", function() {
         appearOnScroll.observe(fader);
     });
 });
+    // 3. 一键复制微信号功能
+    const copyWechatBtn = document.getElementById('copyWechatBtn');
+    const copySuccess = document.getElementById('copySuccess');
+
+    if (copyWechatBtn) {
+        copyWechatBtn.addEventListener('click', function() {
+            // 这里要改成你真实的微信号
+            const wechatId = 'zhange_888'; 
+            
+            // 调用浏览器剪贴板 API
+            navigator.clipboard.writeText(wechatId).then(() => {
+                // 复制成功后的提示
+                copySuccess.style.display = 'block';
+                setTimeout(() => {
+                    copySuccess.style.display = 'none';
+                }, 3000); // 3秒后隐藏提示
+            }).catch(err => {
+                alert('复制失败，请手动长按选择复制：' + wechatId);
+            });
+        });
+    }

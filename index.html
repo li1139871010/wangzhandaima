@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>章鱼哥 | 独立开发者与 AI 玩家</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐺</text></svg>">
+    <title>章鱼哥的精选好物铺</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛍️</text></svg>">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,94 +12,87 @@
     <nav>
         <div class="nav-links">
             <a href="#home">首页</a>
-            <a href="#skills">我的能力</a>
-            <a href="#services">服务项目</a>
-            <a href="#contact">联系合作</a>
+            <a href="#shop">精选好物</a>
+            <a href="#contact">联系购买</a>
         </div>
         <button class="theme-toggle" id="themeToggle">🌙 切换深色</button>
     </nav>
 
-    <!-- 首屏海报区 (Hero Section) -->
+    <!-- 首屏海报区 -->
     <section id="home" class="hero fade-in">
-        <!-- 如果你有本地的狼头像，把 src 换成 images/avatar.jpg -->
-        <img src="https://picsum.photos/200" alt="章鱼哥的头像" class="avatar">
-        <h1 class="hero-title">你好，我是 <span class="highlight">章鱼哥</span></h1>
-        <!-- 修改下面这句话，写下你的核心定位 -->
-        <p class="hero-subtitle">一个热衷于折腾 AI 和本地大模型的独立开发者。</p>
+        <img src="https://picsum.photos/200" alt="Logo" class="avatar">
+        <h1 class="hero-title">欢迎来到 <span class="highlight">章鱼哥好物铺</span></h1>
+        <p class="hero-subtitle">用心挑选每一件好物，只为给你最好的体验。</p>
         <div class="hero-buttons">
-            <a href="#services" class="btn btn-primary">查看我的服务</a>
-            <a href="#contact" class="btn btn-secondary">联系我</a>
+            <a href="#shop" class="btn btn-primary">立即选购</a>
         </div>
     </section>
 
-    <!-- 核心卖点区 (Features/Skills) -->
-    <section id="skills" class="content-section fade-in">
-        <h2 class="section-title">我的核心能力</h2>
+    <!-- 商品展示区（电商核心） -->
+    <section id="shop" class="content-section fade-in">
+        <h2 class="section-title">本期主推好物</h2>
         <div class="container">
-            <!-- 卡片 1 -->
-            <div class="card skill-card">
-                <div class="icon">💻</div>
-                <h2>前端开发</h2>
-                <p>熟练使用 HTML, CSS, JS。能够独立从零搭建响应式网页，并部署上线。</p>
-            </div>
-            <!-- 卡片 2 -->
-            <div class="card skill-card">
-                <div class="icon">🤖</div>
-                <h2>AI 智能体部署</h2>
-                <p>熟悉 Ollama 与本地大模型运行机制。能利用 DSH 框架搭建自动化工作流。</p>
-            </div>
-            <!-- 卡片 3 -->
-            <div class="card skill-card">
-                <div class="icon">🚀</div>
-                <h2>产品思维</h2>
-                <p>不只是写代码，更懂得如何利用技术解决具体问题，打造极致的用户体验。</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 服务项目区 (Services - 像商品一样列出服务) -->
-    <section id="services" class="content-section fade-in">
-        <h2 class="section-title">我可以为你做什么</h2>
-        <div class="container">
-            <div class="card price-card">
-                <h2>基础网页搭建</h2>
-                <div class="price">￥ 面议</div>
-                <ul class="feature-list">
-                    <li>✅ 个人主页/简历页</li>
-                    <li>✅ 产品展示单页</li>
-                    <li>✅ 移动端完美适配</li>
-                    <li>✅ 免费部署上线</li>
-                </ul>
-                <a href="#contact" class="btn btn-primary" style="width: 100%;">立即咨询</a>
-            </div>
             
-            <div class="card price-card featured">
-                <div class="badge">最受欢迎</div>
-                <h2>AI 工具链咨询</h2>
-                <div class="price">￥ 面议</div>
-                <ul class="feature-list">
-                    <li>✅ 本地大模型部署指导</li>
-                    <li>✅ 专属代码助手调教</li>
-                    <li>✅ 自动化工作流设计</li>
-                    <li>✅ 一对一答疑</li>
-                </ul>
-                <a href="#contact" class="btn btn-primary" style="width: 100%;">立即咨询</a>
+            <!-- 商品卡片 1 -->
+            <div class="card product-card">
+                <!-- 商品图片，建议换成你自己的商品图，例如 src="images/item1.jpg" -->
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80" alt="商品1" class="product-img">
+                <div class="product-info">
+                    <h2>高级降噪耳机</h2>
+                    <p class="product-desc">沉浸式音质，超长续航，通勤路上的最佳伴侣。</p>
+                    <div class="product-bottom">
+                        <span class="price">￥ 299</span>
+                        <!-- 这里的按钮不跳转支付，而是跳转到下方的联系区 -->
+                        <a href="#contact" class="btn btn-primary btn-small">立即咨询</a>
+                    </div>
+                </div>
             </div>
+
+            <!-- 商品卡片 2 -->
+            <div class="card product-card">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80" alt="商品2" class="product-img">
+                <div class="product-info">
+                    <h2>极简智能手表</h2>
+                    <p class="product-desc">健康监测，消息提醒，超长待机，展现科技美学。</p>
+                    <div class="product-bottom">
+                        <span class="price">￥ 599</span>
+                        <a href="#contact" class="btn btn-primary btn-small">立即咨询</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 商品卡片 3 -->
+            <div class="card product-card">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80" alt="商品3" class="product-img">
+                <div class="product-info">
+                    <h2>限量版运动鞋</h2>
+                    <p class="product-desc">轻盈透气，潮流百搭，限量发售，先到先得。</p>
+                    <div class="product-bottom">
+                        <span class="price">￥ 899</span>
+                        <a href="#contact" class="btn btn-primary btn-small">立即咨询</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- 联系区 (Contact) -->
+    <!-- 联系引流区 -->
     <section id="contact" class="content-section fade-in">
         <div class="card contact-card">
-            <h2>准备好开始合作了吗？</h2>
-            <p>无论你是想建一个网站，还是对 AI 充满好奇，都欢迎随时联系我。</p>
-            <!-- 修改下面的 mailto: 后面的邮箱地址 -->
-            <a href="mailto:your-email@example.com" class="btn btn-primary" style="margin-top: 20px;">发送邮件给我</a>
+            <h2>如何购买？</h2>
+            <p>目前暂不支持在线支付。如果您对以上商品感兴趣，请添加我的微信或发送邮件，我将为您发货。</p>
+            <div style="margin-top: 20px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <!-- 点击复制微信号 -->
+                <button id="copyWechatBtn" class="btn btn-primary">📋 复制微信号: zhange_888</button>
+                <a href="mailto:your-email@example.com" class="btn btn-secondary">发送邮件</a>
+            </div>
+            <p id="copySuccess" style="color: #00d2ff; margin-top: 10px; display: none;">微信号已复制，请打开微信添加！</p>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 章鱼哥. Built with ❤️ and AI.</p>
+        <p>© 2026 章鱼哥好物铺. 保留所有权利。</p>
     </footer>
 
     <script src="script.js"></script>
